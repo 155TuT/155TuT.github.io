@@ -1,13 +1,13 @@
 ---
 
 layout: post
-title: "partial-sum"
+title: "前缀和，前缀积与差分"
 date: 2025-03-16 23:49:00 +0800
 categories: C++ Algorithm fzu_ACM_weekly_train
+author: "155TuT"
+tags: [C++, Algorithm, fzu_ACM_weekly_train]
 
 ---
-
-## 前缀和，前缀积与差分
 
 ------
 
