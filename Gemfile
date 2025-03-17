@@ -5,6 +5,7 @@ gem "jekyll"
 gem 'nokogiri'
 gem 'rack', '~> 2.2.4'
 gem 'rspec'
+gem "faraday-retry"
 gem "github-pages", group: :jekyll_plugins
 # 添加以下内容
 group :jekyll_plugins do
