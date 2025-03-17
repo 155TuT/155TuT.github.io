@@ -1,2 +1,1 @@
-# 155TuT.github.io
-Private blog
+# 155TuT's blog
