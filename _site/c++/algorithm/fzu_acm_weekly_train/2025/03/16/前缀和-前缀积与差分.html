@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>前缀和，前缀积与差分 | 155TuT’s blog</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="前缀和，前缀积与差分" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="前缀和，前缀积与差分" />
+<meta property="og:description" content="前缀和，前缀积与差分" />
+<link rel="canonical" href="http://localhost:4000/c++/algorithm/fzu_acm_weekly_train/2025/03/16/%E5%89%8D%E7%BC%80%E5%92%8C-%E5%89%8D%E7%BC%80%E7%A7%AF%E4%B8%8E%E5%B7%AE%E5%88%86.html" />
+<meta property="og:url" content="http://localhost:4000/c++/algorithm/fzu_acm_weekly_train/2025/03/16/%E5%89%8D%E7%BC%80%E5%92%8C-%E5%89%8D%E7%BC%80%E7%A7%AF%E4%B8%8E%E5%B7%AE%E5%88%86.html" />
+<meta property="og:site_name" content="155TuT’s blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-03-16T23:49:00+08:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="前缀和，前缀积与差分" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2025-03-16T23:49:00+08:00","datePublished":"2025-03-16T23:49:00+08:00","description":"前缀和，前缀积与差分","headline":"前缀和，前缀积与差分","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/c++/algorithm/fzu_acm_weekly_train/2025/03/16/%E5%89%8D%E7%BC%80%E5%92%8C-%E5%89%8D%E7%BC%80%E7%A7%AF%E4%B8%8E%E5%B7%AE%E5%88%86.html"},"url":"http://localhost:4000/c++/algorithm/fzu_acm_weekly_train/2025/03/16/%E5%89%8D%E7%BC%80%E5%92%8C-%E5%89%8D%E7%BC%80%E7%A7%AF%E4%B8%8E%E5%B7%AE%E5%88%86.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=23e2fd30a728db968e5ae829fc1b73b554c583d7">
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://localhost:4000/">155TuT's blog</a></h1>
+
+        
+
+        <p>Verweile doch, du bist so schön!</p>
+
+        
+        <p class="view"><a href="https://github.com/155TuT/155TuT.github.io">View the Project on GitHub <small>155TuT/155TuT.github.io</small></a></p>
+        
+
+        
+
+        
+      </header>
+      <section>
+
+      <small>16 March 2025</small>
+<h1>前缀和，前缀积与差分</h1>
+
+<p class="view">by </p>
+
+<h2 id="前缀和前缀积与差分">前缀和，前缀积与差分</h2>
+
+<hr />
+
+<h3 id="效果">效果</h3>
+
+<p>前缀数组中的区间运算（和，积）同时满足<strong>结合律</strong>和<strong>可逆性</strong>时，可通过预处理将区间查询复杂度降至O(1)。前缀差分则特殊处理差商/逆运算关系，通过<strong>构造增量数组</strong>优化区间更新。</p>
+
+<h3 id="核心">核心</h3>
+
+<p>找到运算的<strong>代数结构特征</strong>（结合律/可逆性/同余性）来构造中间状态：当目标运算满足结合律时，可构造累积结构加速区间查询（如和/积）；当运算存在逆元时，可构造差分结构优化区间更新（如加减/异或）。</p>
+
+<h3 id="本质">本质</h3>
+
+<p><strong>预处理</strong>思想在代数系统中的应用。通过预处理将运算的代数性质转化为时空效率的优化，对模运算、矩阵乘法等具备代数结构的操作同样适用。</p>
+
+<hr />
+
+<h3 id="时间复杂度">时间复杂度</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>区间查询</th>
+      <th>单点查询</th>
+      <th>区间修改</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>前缀和/积</td>
+      <td>O(1)</td>
+      <td>O(1)</td>
+      <td>O(n)</td>
+    </tr>
+    <tr>
+      <td>差分</td>
+      <td>O(n)</td>
+      <td>O(n)</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <td><del>树状数组/线段树</del></td>
+      <td>O(logn)</td>
+      <td>O(logn)</td>
+      <td>O(logn)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="coding">coding</h2>
+
+<h3 id="前缀和">前缀和</h3>
+
+<h4 id="简单构建partial_sum">简单构建：partial_sum</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;numeric&gt;</span><span class="c1">//不在algorithm中</span><span class="cp">
+#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
+</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">arr</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="c1">//原数组</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prefix</span><span class="p">(</span><span class="n">n</span><span class="p">);</span><span class="c1">//前缀和数组</span>
+<span class="n">partial_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">prefix</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span><span class="c1">//正常格式</span>
+
+<span class="n">partial_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span><span class="c1">//直接覆盖</span>
+</code></pre></div></div>
+
+<p><del>太过简单，在这个过程中基本不需要，但是后面会有用</del></p>
+
+<h4 id="查询下标特判或从1开始">查询：下标特判或从1开始</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="n">R</span><span class="p">]</span> <span class="o">-</span> <span class="n">prefix</span><span class="p">[</span><span class="n">L</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span><span class="c1">//会越界</span>
+
+<span class="k">auto</span> <span class="n">presum</span> <span class="o">=</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span>
+	<span class="k">return</span> <span class="n">l</span> <span class="o">?</span> <span class="n">prefix</span><span class="p">[</span><span class="n">r</span><span class="p">]</span> <span class="o">-</span> <span class="n">prefix</span><span class="p">[</span><span class="n">l</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">:</span> <span class="n">prefix</span><span class="p">[</span><span class="n">r</span><span class="p">];</span><span class="c1">//特判</span>
+<span class="p">}</span>
+
+<span class="n">arr</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span><span class="c1">//下标从1开始</span>
+<span class="n">partial_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">prefix</span><span class="p">.</span><span class="n">begin</span><span class="p">());</span><span class="c1">//刚刚好</span>
+</code></pre></div></div>
+
+<h3 id="前缀积">前缀积</h3>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mul</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="n">R</span><span class="p">]</span> <span class="o">/</span> <span class="n">prefix</span><span class="p">[</span><span class="n">L</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span><span class="c1">//超过64个2就会溢出，基本只能高精度，用处不大</span>
+</code></pre></div></div>
+
+<p>但日常使用还是取模居多，因此乘法逆元便成了需要用到的逆运算</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">const</span> <span class="kt">int</span> <span class="n">mod</span> <span class="o">=</span> <span class="mf">1e9</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span><span class="c1">//假设mod为质数</span>
+<span class="kt">int</span> <span class="nf">qpow</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">k</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">while</span><span class="p">(</span><span class="n">k</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">k</span> <span class="o">&amp;</span> <span class="mi">1</span><span class="p">)</span><span class="n">res</span> <span class="o">=</span> <span class="mi">1LL</span> <span class="o">*</span> <span class="n">res</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="mi">1LL</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">a</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+        <span class="n">k</span> <span class="o">&gt;&gt;=</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">prefix</span><span class="p">,</span> <span class="n">inv_prefix</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="n">build</span><span class="p">(</span><span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">arr</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="n">arr</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+    <span class="n">prefix</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> 
+        <span class="n">prefix</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1LL</span> <span class="o">*</span> <span class="n">prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+    <span class="n">inv_prefix</span><span class="p">.</span><span class="n">resize</span><span class="p">(</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+    <span class="n">inv_prefix</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">qpow</span><span class="p">(</span><span class="n">prefix</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">mod</span> <span class="o">-</span>  <span class="mi">2</span><span class="p">);</span><span class="c1">//计算整体逆元</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="c1">//逆向递推局部逆元</span>
+        <span class="n">inv_prefix</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1LL</span> <span class="o">*</span> <span class="n">inv_prefix</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">query</span><span class="p">(</span><span class="kt">int</span> <span class="n">l</span><span class="p">,</span> <span class="kt">int</span> <span class="n">r</span><span class="p">){</span><span class="c1">//闭区间[l, r]，0-based索引</span>
+    <span class="k">return</span> <span class="mi">1LL</span> <span class="o">*</span> <span class="n">prefix</span><span class="p">[</span><span class="n">r</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">inv_prefix</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">%</span> <span class="n">mod</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="前缀异或">前缀异或</h3>
+
+<p>异或的逆运算是其本身，<del>太方便啦</del></p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">xor</span><span class="p">(</span><span class="n">L</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span> <span class="o">=</span> <span class="n">prefix</span><span class="p">[</span><span class="n">R</span><span class="p">]</span> <span class="o">^</span> <span class="n">prefix</span><span class="p">[</span><span class="n">L</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span><span class="c1">//注意不取任何元素的前缀是0，少了会漏统计</span>
+
+<span class="n">partial_sum</span><span class="p">(</span><span class="n">arr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">arr</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> <span class="n">xorarr</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="p">[](</span><span class="kt">int</span> <span class="n">prev</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cur</span><span class="p">){</span><span class="k">return</span> <span class="n">prev</span> <span class="o">^</span> <span class="n">cur</span><span class="p">;});</span>
+</code></pre></div></div>
+
+<p>partial_sum的第四个参数可以接受一个二元操作函数表示如何进行统计，其中prev是已统计的结果，cur是当前元素，因此非累加运算也可通过这样的方式编写。</p>
+
+<h3 id="二维前缀及多维前缀">二维前缀及多维前缀</h3>
+
+<p>容斥原理来理解即可</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sum</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">)</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">x2</span><span class="p">][</span><span class="n">y2</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="n">x2</span><span class="p">][</span><span class="n">y1</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">p</span><span class="p">[</span><span class="n">x1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y2</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="n">x1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">][</span><span class="n">y1</span> <span class="o">-</span> <span class="mi">1</span><span class="p">];</span>
+</code></pre></div></div>
+
+<h3 id="推广普遍前缀">推广：普遍前缀</h3>
+
+<p>前缀只是表示从开始到当前位置的运算结果，因此没有逆运算的运算也可以做前缀数组来预处理，只是无法求解区间问题</p>
+
+<p><del>以及后缀</del></p>
+
+<h2 id="end">end</h2>
+
+<p>树状数组和线段树在面对大部分题目时都是更优的，但学习前缀思想对培养算法思维是不可或缺的一环。<del>才不是这周时间不够还没复习</del></p>
+
+
+
+  <small>tags: <em></em></small>
+
+
+
+      </section>
+      <footer>
+        
+        <p>This project is maintained by <a href="https://github.com/155TuT">155TuT</a></p>
+        
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="/assets/js/scale.fix.js"></script>
+  </body>
+</html>
