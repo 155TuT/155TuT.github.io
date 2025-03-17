@@ -1,7 +1,7 @@
 ---
 
 layout: post
-title: "前缀和，前缀积与差分"
+title: "partial-sum"
 date: 2025-03-16 23:49:00 +0800
 categories: C++ Algorithm fzu_ACM_weekly_train
 
