@@ -57,7 +57,7 @@ partial_sum(arr.begin(), arr.end(), arr.begin());//直接覆盖
 sum(L, R) = prefix[R] - prefix[L - 1];//会越界
 
 auto presum = [&](int l, int r){
-	return l ? prefix[r] - prefix[l - 1] : prefix[r];//特判
+    return l ? prefix[r] - prefix[l - 1] : prefix[r];//特判
 }
 
 arr.insert(arr.begin(), 0);//下标从1开始
