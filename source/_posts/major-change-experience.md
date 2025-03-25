@@ -70,3 +70,5 @@ cover: "https://evan.beee.top/img/208184324-f2640ade-587a-4f46-8ad1-7b4c1b31394f
 我仍期望着有一天，我也能像我仰慕的人一样站在那里，自信的说出我心中的那句：
 
 ### “应行的路，我行尽了”
+
+> 同步发表于[fzu-run](https://run.west2.online/change-major/cs/250324-1/)
