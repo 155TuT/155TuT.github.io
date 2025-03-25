@@ -25,11 +25,11 @@ info:
 # Docs: https://redefine-docs.ohevan.com/basic/defaults
 defaults:
   # Favicon
-  favicon: /images/155TuT.png
+  favicon: /images/155TuT.webp
   # Site logo
   logo: 
   # Site avatar
-  avatar: /images/155TuT.png
+  avatar: /images/155TuT.webp
 # IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
 
 
@@ -125,8 +125,8 @@ home_banner:
   style: fixed # static or fixed
   # Home banner image
   image: 
-    light: /images/wallhaven-wqery6-light.webp # light mode
-    dark: /images/wallhaven-wqery6-dark.webp # dark mode
+    light: /images/morning.webp # light mode
+    dark: /images/evening.webp # dark mode
   # Home banner title
   title: "Let's start here"
   # Home banner subtitle

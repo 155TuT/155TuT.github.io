@@ -13,9 +13,9 @@
     - name: Azsgw_Sakuta's Blog
       link: https://azusagawa-sakuta.github.io/
       description: CS Blog
-      avatar: /source/images/Azsgw.jpg
+      avatar: /images/Azsgw.webp
     - name: Baoshuo's Blog
       link: https://baoshuo.ren
       description: Personal Blog
-      avatar: source/images/Baoshuo.jpg
+      avatar: /images/Baoshuo.webp
  
