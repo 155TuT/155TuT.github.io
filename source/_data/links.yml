@@ -1,0 +1,21 @@
+# links_category: Elites
+# has_thumbnail: true
+# list:
+#     - name: EvanNotFound's Blog
+#       link: https://ohevan.com
+#       description: 用香港记者的速度更新文章
+#       avatar: https://evan.beee.top/avatar.png
+#       thumbnail: https://img1.imgtp.com/2023/06/19/Jegvz84P.png # has_thumbnail 为 true 时才需要
+ 
+- links_category: Thanks
+  has_thumbnail: false
+  list:
+    - name: Azsgw_Sakuta's Blog
+      link: https://azusagawa-sakuta.github.io/
+      description: CS Blog
+      avatar: /source/images/Azsgw.jpg
+    - name: Baoshuo's Blog
+      link: https://baoshuo.ren
+      description: Personal Blog
+      avatar: source/images/Baoshuo.jpg
+ 
