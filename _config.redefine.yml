@@ -202,9 +202,11 @@ navbar:
     Home: 
       path: / 
       icon: fa-regular fa-house # can be empty
-    Archives: 
-      path: /archives 
+    Archives:  
       icon: fa-regular fa-archive # can be empty
+      submenus:
+        List: /archives
+        Tags: /tags
     # Status: 
     #   path: https://status.ohevan.com/
     #   icon: fa-regular fa-chart-bar
@@ -214,7 +216,13 @@ navbar:
         Me: https://github.com/155TuT
         Github: https://github.com/155TuT/155TuT.github.io
     #     Blog: https://ohevan.com
-        Friends: /links/
+        Friends: /links
+    Useful: 
+      icon: fa-regular fa-link
+      submenus:
+        OI Wiki: https://oi-wiki.org
+        Luogu: https://www.luogu.com.cn
+        CodeForces: https://codeforces.com
     # Links: 
     #   icon: fa-regular fa-link
     #   submenus:
