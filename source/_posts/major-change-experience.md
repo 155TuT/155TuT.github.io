@@ -3,7 +3,7 @@ title: 转专业经验贴
 date: 2025/03/24 19:10:00
 tags:
   - Gossip
-cover: "https://evan.beee.top/img/208184324-f2640ade-587a-4f46-8ad1-7b4c1b31394f.png"
+cover: "/head.webp"
 ---
 ## 个人信息：
 
