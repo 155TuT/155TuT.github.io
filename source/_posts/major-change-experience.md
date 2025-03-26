@@ -3,7 +3,7 @@ title: 转专业经验贴
 date: 2025/03/24 19:10:00
 tags:
   - Gossip
-cover: "https://155tut.github.io/2025/03/24/najor-change-experinece/head.webp"
+cover: "https://155tut.github.io/2025/03/24/major-change-experinece/head.webp"
 ---
 ## 个人信息：
 
