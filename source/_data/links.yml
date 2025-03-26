@@ -10,12 +10,20 @@
 - links_category: Thanks
   has_thumbnail: false
   list:
-    - name: Azsgw_Sakuta's Blog
+    - name: Azsgw_Sakuta
       link: https://azusagawa-sakuta.github.io/
       description: CS Blog
       avatar: /images/Azsgw.webp
-    - name: Baoshuo's Blog
+    - name: Baoshuo
       link: https://baoshuo.ren
       description: Personal Blog
       avatar: /images/Baoshuo.webp
+    - name: Doubeecat
+      link: https://doubeecat.cn
+      description: Personal Blog
+      avatar: /images/Doubeecat.webp
+    - name: Soapoison
+      link: https://soapoison.github.io
+      description: Personal Blog
+      avatar: /images/Soapoison.webp
  
