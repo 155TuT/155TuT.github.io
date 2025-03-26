@@ -5,6 +5,7 @@ tags:
   - C++
   - Algorithm
   - fzu_ACM_weekly_train
+cover: "https://155tut.github.io/2025/03/24/partial-sum/head.webp"
 ---
 ## 基础
 
