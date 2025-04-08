@@ -27,7 +27,7 @@ cover: "https://155tut.github.io/2025/03/26/todo-list/head.webp"
 - Primer&&Primer Plus
 - 算法竞赛进阶指南
 
-### etc.
+### etc
 
 - 算法导论
 
@@ -77,7 +77,7 @@ cover: "https://155tut.github.io/2025/03/26/todo-list/head.webp"
 
 - n1
 
-#### etc.
+#### etc
 
 - 法语
 - 德语
@@ -85,7 +85,7 @@ cover: "https://155tut.github.io/2025/03/26/todo-list/head.webp"
 
 ## 本站
 
- - 服务器
- - DNS
- - 评论
- - 随时间变化的背景
+- 服务器
+- DNS
+- 评论
+- 随时间变化的背景
