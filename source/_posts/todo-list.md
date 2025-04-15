@@ -1,13 +1,12 @@
 ---
 title: ToDo List
-date: 2025-03-26 11:47:49
+date: 2025/03/26 11:47:49
 tags: 
   - Gossip
 sticky: 999
 excerpt: "不惜代价的追求某一事物才是真正的贪婪"
 cover: "https://155tut.github.io/2025/03/26/todo-list/head.webp"
 ---
-
 ## 课内
 
 ### 高数

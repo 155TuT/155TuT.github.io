@@ -220,6 +220,7 @@ navbar:
     Useful: 
       icon: fa-regular fa-link
       submenus:
+        Cppreference: https://zh.cppreference.com/w/
         OI Wiki: https://oi-wiki.org
         Luogu: https://www.luogu.com.cn
         CodeForces: https://codeforces.com
