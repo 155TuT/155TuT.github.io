@@ -1,6 +1,6 @@
 ---
 title: 转专业经验贴
-date: 2025/03/24 19:10:00
+date: 2025/03/24
 tags:
   - Gossip
 cover: "https://155tut.github.io/2025/03/24/major-change-experience/head.webp"
