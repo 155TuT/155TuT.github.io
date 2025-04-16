@@ -6,3 +6,7 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+
+draft.md
+changeyaml.cpp
+changeyaml.exe
