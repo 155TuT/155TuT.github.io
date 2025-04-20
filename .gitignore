@@ -7,6 +7,9 @@ public/
 .deploy*/
 _multiconfig.yml
 
+.vscode/
 draft.md
 changeyaml.cpp
 changeyaml.exe
+tags.cfg
+excerpt.txt
