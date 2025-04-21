@@ -11,5 +11,7 @@ _multiconfig.yml
 draft.md
 changeyaml.cpp
 changeyaml.exe
-tags.cfg
 excerpt.txt
+httplib.h
+json.hpp
+config.json
