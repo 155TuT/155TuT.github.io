@@ -353,7 +353,7 @@ articles:
 # Docs: https://redefine-docs.ohevan.com/posts/comment
 comment:
   # Whether to enable comment
-  enable: true
+  enable: false # Whether to enable comment system
   # Comment system
   system: waline # waline, gitalk, twikoo, giscus
   # System configuration
