@@ -12,7 +12,7 @@
   list:
     - name: Azsgw_Sakuta
       link: https://azusagawa-sakuta.github.io/
-      description: CS Blog
+      description: Personal Blog
       avatar: /images/Azsgw.webp
     - name: Baoshuo
       link: https://baoshuo.ren
@@ -34,4 +34,8 @@
       link: https://wild-donkey.github.io/
       description: Personal Blog
       avatar: /images/WildDonkey.webp
+    - name: CalculationLove
+      link: https://www.cnblogs.com/cjtcalc
+      description: Personal Blog
+      avatar: /images/Calculation.webp
  
