@@ -8,6 +8,8 @@ tags:
   - Gossip
 cover: "https://155tut.github.io/2025/10/28/ui-design/head.webp"
 ---
+> “该说些什么，你知道的，我不懂的。”
+
 ## 考核信息
 
 ### 时间
@@ -100,3 +102,5 @@ cover: "https://155tut.github.io/2025/10/28/ui-design/head.webp"
 加油，155TuT，无限进步！
 
 ~~其实这篇文章也只是作为第二阶段考核成果存在的，确实是对经验分享这件事失去了很多兴致~~
+
+> 因考核要求同步发表于[飞书](https://ecn391pn069m.feishu.cn/wiki/IjC6wclCXiXRDhk2OiFcKlN1nJe?from=from_copylink)
